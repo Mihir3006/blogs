@@ -1,0 +1,30 @@
+<%- include('partials/header'); %>
+<div class="signup">
+    <form action="/signup" method="POST">
+        <div class="mb-3">
+            <label>Name*</label>
+            <input type="text" class="form-control" placeholder="First Name" value="" name="firstname" required />
+          </div> 
+           <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Last Name*(as in ID)</label>
+            <input type="text" class="form-control"  placeholder="Tech" name="last" required />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email ID</label>
+            <input type="email" class="form-control"  placeholder="name@example.com" name="mail" required />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Password*</label>
+            <input type="password" class="form-control" rows="3" name="pass" required />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Confirm Password*</label>
+            <input type="password" class="form-control" placeholder="" name="cpass" required />
+          </div>
+          <div class="button">
+            <button type="submit" class="btn btn-primary" value="signup">Sign-Up</button>
+          </div>
+    </form>
+</div>
+
+<%- include('partials/footer'); %>

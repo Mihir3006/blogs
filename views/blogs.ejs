@@ -1,0 +1,39 @@
+<%- include('partials/header'); %>
+    <div class="blogsMaker">
+        <h1>Welcome <%= user %>
+        </h1>
+
+        <p>Today, is beautiful day we want you to create Blog</p>
+    </div>
+    <button class="btn btn-primary mt-2"> <a class="nav-link" href="/logout" style="color: white;">logout</a></button>
+    <!-- input form -->
+    <form class="item" action="/show/:id" method="post">
+        <input type="hidden" value="<%= number %>" name="blogname">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Title:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="blogname">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Post:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="blogpost"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2" value="AddBlog">Add Blog</button>
+    </form>
+
+    <!-- showing blogs -->
+    <% yourPost.forEach(item=> { %>
+        <form action="/delete" method="post">
+            <div class="showblogs">
+                <h1>
+                    <%= item.title %>
+                </h1>
+                <p>
+                    <%= item.post %>
+                </p>
+                <input type="hidden" value="<%= number %>" name="blogname">
+                <button type="submit" class="btn btn-primary mt-2" name="postid" value="<%= item._id %>">Delete</button>
+            </div>
+        </form>
+        <%}) %>
+
+            <%- include('partials/footer'); %>
