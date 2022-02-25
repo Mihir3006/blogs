@@ -9,6 +9,7 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
 const auth = require("./middleware/auth");
 const port = process.env.PORT || 3000;
+const uri = process.env.MONGODB_URI;
 
 const app = express();
 
